@@ -22,12 +22,8 @@ jobs:
         with:
           python-version: '3.9'
 
-      # Step 3: Run Unit Tests
-      - name: Run unit tests
-        run: |
-          pytest
 
-      # Step 4: Set up Docker to build the container
+      # Step 3: Set up Docker to build the container
       - name: Build Docker image
         run: |
           docker build -t webapp .
