@@ -1,0 +1,39 @@
+---
+- hosts: local
+  become: true
+  tasks:
+    
+    # Task 1: Ensure Docker is installed
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+      tags: docker
+
+    # Task 2: Ensure Docker is started and enabled
+    - name: Start Docker service
+      systemd:
+        name: docker
+        enabled: true
+        state: started
+      tags: docker
+
+    # Task 3: Pull the webapp image from Docker Hub (or local registry)
+    - name: Pull webapp  Docker image
+      docker_image:
+        name: webapp
+        source: build
+        path: D:\webapp  # Use the correct path to your app
+      tags: docker
+
+    # Task 4: Run the Docker container
+    - name: Run webapp container
+      docker_container:
+        name: webapp-container
+        image: webapp
+        state: started
+        ports:
+          - "5000:5000"  # Map port 5000 from container to host
+        env:
+          ENV_VAR: "value"  # Any necessary environment variables
+      tags: docker
