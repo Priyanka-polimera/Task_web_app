@@ -37,3 +37,4 @@
         env:
           ENV_VAR: "value"  # Any necessary environment variables
       tags: docker
+      
