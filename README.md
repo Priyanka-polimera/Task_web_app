@@ -46,8 +46,9 @@
 **Details on the Dockerfile:**
  
   The Dockerfile is used to containerize the web application, ensuring it can run in a consistent environment.
- 
-  <img width="351" alt="image" src="https://github.com/user-attachments/assets/f01087fa-f96b-4132-9459-7fe544d0c971">
+
+  <img width="350" alt="image" src="https://github.com/user-attachments/assets/50419fa9-bbfe-44fa-8fe4-d4ff767c4b81">
+
 
 	
   Explanation:
