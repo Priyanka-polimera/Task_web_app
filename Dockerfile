@@ -7,6 +7,9 @@ WORKDIR /app
 # copy current directory contents into container at /app
 COPY . /app
 
+# install dependencies using requirements.txt
+RUN pip install -r requirements.txt
+
 # make port 5000 available to world outside this container
 EXPOSE 5000
 
